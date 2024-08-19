@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Match from './Match';
 import Chat from './Chat';
+import './App.css'
 
 function App() {
   const [userId, setUserId] = useState('');
@@ -47,7 +48,9 @@ function App() {
         </form>
       ) : (
         <>
-          <Match userId={parseInt(userId)} setSelectedUser={handleMatchSelection} />
+          {!selectedMatchUser && (
+            <Match userId={parseInt(userId)} setSelectedUser={handleMatchSelection} />
+          )}
           {selectedMatchUser && (
             <div>
               <h3>Selected User: {selectedMatchUser.name}</h3>

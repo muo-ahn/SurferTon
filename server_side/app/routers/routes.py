@@ -90,16 +90,24 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
+def get_user(user_id: int):
+    user = next((u for u in users if u.user_id == user_id), None)
+    if user:
+        return user.name
+    else:
+        raise HTTPException(status_code=404, detail="User not found")
+
 @router.websocket("/ws/chat/{chat_id}/{user_id}")
 async def chat_websocket(websocket: WebSocket, chat_id: str, user_id: int):
     await manager.connect(chat_id, user_id, websocket)
+    user = get_user(user_id=user_id)
     try:
         while True:
             data = await websocket.receive_text()
-            await manager.broadcast(f"User {user_id}: {data}", chat_id)
+            await manager.broadcast(f"{user}: {data}", chat_id)
     except WebSocketDisconnect:
         manager.disconnect(chat_id, user_id)
-        await manager.broadcast(f"User {user_id} left the chat", chat_id)
+        await manager.broadcast(f"{user} left the chat", chat_id)
 
 # match algorithm
 def calculate_age_similarity(age1: int, age2: int) -> float:

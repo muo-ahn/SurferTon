@@ -1,72 +1,16 @@
-/* Chat.css */
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+#chat2 .form-control {
+  border-color: transparent;
 }
 
-.match-list {
-  margin-bottom: 20px;
+#chat2 .form-control:focus {
+  border-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
 }
 
-.match-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.match-list li {
-  margin-bottom: 10px;
-}
-
-.match-list button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.chat-container {
-  width: 100%;
-  max-width: 500px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.message-list {
-  max-height: 300px;
-  overflow-y: auto;
-  margin-bottom: 20px;
-}
-
-.message-item {
-  padding: 10px;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.message-input-container {
-  display: flex;
-  gap: 10px;
-}
-
-.message-input {
+.divider:after,
+.divider:before {
+  content: "";
   flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.send-button {
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  height: 1px;
+  background: #eee;
 }
