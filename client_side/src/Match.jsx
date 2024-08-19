@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function Match({ userId, setSelectedUser }) {
   const [matches, setMatches] = useState([]);
+  const [username, setUsername] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,7 +15,8 @@ function Match({ userId, setSelectedUser }) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json(); // Try parsing the response as JSON
-        setMatches(data);
+        setMatches(data.matches);
+        setUsername(data.username)
       } catch (err) {
         console.error('Failed to fetch matches:', err);
         setError('Failed to load matches. Please check the console for more details.');
@@ -31,6 +33,7 @@ function Match({ userId, setSelectedUser }) {
 
   return (
     <div className="match-list">
+      <h1>Hi, {username}!</h1>
       <h2>Your Matches</h2>
       <ul>
         {matches.map((match, index) => (

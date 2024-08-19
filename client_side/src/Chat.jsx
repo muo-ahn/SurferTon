@@ -42,7 +42,6 @@ function Chat({ chatId, userId }) {
           <div className="layout-content-container flex flex-col w-80">
             <div className="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
               <div className="flex flex-col gap-4">
-                <h1>Hi, Lina!</h1>
                 <div className="flex flex-col gap-2">
                   <div className="nav-item">
                     <div>
@@ -83,7 +82,6 @@ function Chat({ chatId, userId }) {
           <div className="main-container">
             <div className="header">
               <div className="flex min-w-72 flex-col gap-3">
-                <p className="title">Lina</p>
                 <p className="status">Available now</p>
               </div>
             </div>

@@ -159,4 +159,7 @@ def get_matches(user_id: int, top_n: int = len(users) - 1):
         raise HTTPException(status_code=404, detail="User not found")
     
     matches = find_best_matches(user, users, top_n)
-    return matches
+    return {
+        "matches": matches,
+        "username": user.name
+        }
