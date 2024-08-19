@@ -29,3 +29,4 @@ This is a simple FastAPI project setup.
 Start the FastAPI server using Uvicorn:
 ```sh
 uvicorn app.main:app --reload
+```
