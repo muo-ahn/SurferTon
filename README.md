@@ -1,4 +1,15 @@
-1. Activate the virtual environment:
+# My FastAPI Project
+
+This is a simple FastAPI project setup.
+
+## Installation
+
+1. Create a virtual environment:
+    ```sh
+    python -m venv venv
+    ```
+
+2. Activate the virtual environment:
     - On Windows:
         ```sh
         venv\Scripts\activate
@@ -8,7 +19,7 @@
         source venv/bin/activate
         ```
 
-2. Install dependencies:
+3. Install dependencies:
     ```sh
     pip install -r requirements.txt
     ```
@@ -17,5 +28,4 @@
 
 Start the FastAPI server using Uvicorn:
 ```sh
-cd server_side
 uvicorn app.main:app --reload
